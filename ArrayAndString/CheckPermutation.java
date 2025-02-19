@@ -1,5 +1,9 @@
 package ArrayAndString;
 import java.util.*;
+/*
+ * 1.2 Check permutation
+ * Given two strings, write a methdo to decide if one is a permutation of the other
+ */
 public class CheckPermutation {
     private static boolean permutation(String word1, String word2) {
         Set<Character> letterSet1 = new HashSet<>();
