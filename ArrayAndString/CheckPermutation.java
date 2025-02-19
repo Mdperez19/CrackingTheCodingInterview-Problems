@@ -6,16 +6,20 @@ import java.util.*;
  */
 public class CheckPermutation {
     private static boolean permutation(String word1, String word2) {
-        Set<Character> letterSet1 = new HashSet<>();
-        for (char letter : word1.toCharArray()) {
-            letterSet1.add(letter);
-        }
-        Set<Character> letterSet2 = new HashSet<>();
-        for (char letter : word2.toCharArray()) {
-            letterSet2.add(letter);
+        
+        char[] letterIn1 = word1.toCharArray();
+        char[] letterIn2 = word2.toCharArray();
+
+        Arrays.sort(letterIn1);
+        Arrays.sort(letterIn2);
+
+        for (int i = 0; i < letterIn2.length; i++) {
+            if(letterIn1[i] != letterIn2[i]){
+                return false;
+            }
         }
 
-        return letterSet1.equals(letterSet2);
+        return true;
 
     }
     
